@@ -116,10 +116,10 @@ namespace WPFHexaEditorExample
 
         private void GOHexPosition_Click(object sender, RoutedEventArgs e)
         {
-            var (success, position) = ByteConverters.HexLiteralToLong(PositionHexText.Text);
+            var position = ByteConverters.HexLiteralToLong(PositionHexText.Text);
 
-            if (success && position > 0)
-                HexEdit.SetPosition(position, 1);
+            if (position != null && position > 0)
+                HexEdit.SetPosition(position.Value, 1);
             else
                 MessageBox.Show("Enter hexa value.");
 
@@ -128,7 +128,7 @@ namespace WPFHexaEditorExample
 
         private void PositionHexText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            GoPositionHexaButton.IsEnabled = ByteConverters.IsHexValue(PositionHexText.Text).success;
+            GoPositionHexaButton.IsEnabled = ByteConverters.IsHexValue(PositionHexText.Text) != null;
         }
 
         private void PositionText_TextChanged(object sender, TextChangedEventArgs e)

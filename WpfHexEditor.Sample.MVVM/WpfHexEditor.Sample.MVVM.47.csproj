@@ -173,13 +173,13 @@
     <Resource Include="Resources\Icon\Save-Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.NET47.csproj">
-      <Project>{CF6AC02D-02FA-4EE9-A507-BD94F489972E}</Project>
-      <Name>WpfHexaEditor.NET47</Name>
-    </ProjectReference>
+    <Resource Include="Resources\Icon\17101371.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icon\17101371.jpg" />
+    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.csproj">
+      <Project>{62f0f12c-4d51-4684-9d3a-915e5e663804}</Project>
+      <Name>WpfHexaEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\WpfHexEditor.Sample.MVVM.Contracts\WpfHexEditor.Sample.MVVM.Contracts.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
