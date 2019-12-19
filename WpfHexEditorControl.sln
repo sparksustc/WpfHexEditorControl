@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHexEditor.Sample.MVVM.47", "WpfHexEditor.Sample.MVVM\WpfHexEditor.Sample.MVVM.47.csproj", "{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E7C58EBD-5476-4A12-83EB-235DE68AF079}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHexEditor.Sample.MVVM.45", "WpfHexEditor.Sample.MVVM\WpfHexEditor.Sample.MVVM.45.csproj", "{8402A047-02A8-4143-898A-E5C392384CA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHexEditor.UnitTest", "WpfHexEditor.UnitTest\WpfHexEditor.UnitTest.csproj", "{004B0EDC-CEFD-4745-B51C-E99B53A41165}"
 EndProject
@@ -15,31 +11,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9D7389B3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlphaStage", "AlphaStage", "{DE643380-39D7-46A7-8C4C-97626D7BF7DF}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WpfHexEditor.Sample.MVVM.Contracts", "WpfHexEditor.Sample.MVVM.Contracts\WpfHexEditor.Sample.MVVM.Contracts.shproj", "{DAD85044-539A-427A-8624-C5C54830726C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfHexaEditor", "WPFHexaEditor\WpfHexaEditor.csproj", "{62F0F12C-4D51-4684-9D3A-915E5E663804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHexaEditor", "WPFHexaEditor\WpfHexaEditor.csproj", "{62F0F12C-4D51-4684-9D3A-915E5E663804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFHexaEditorExample", "WPFHexaEditorExample\WPFHexaEditorExample.csproj", "{5286F564-DDB2-4AFD-865C-35E4C8905958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFHexaEditorExample", "WPFHexaEditorExample\WPFHexaEditorExample.csproj", "{5286F564-DDB2-4AFD-865C-35E4C8905958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHexEditor.Sample.MVVM", "WpfHexEditor.Sample.MVVM\WpfHexEditor.Sample.MVVM.csproj", "{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		WpfHexEditor.Sample.MVVM.Contracts\WpfHexEditor.Sample.MVVM.Contracts.projitems*{8402a047-02a8-4143-898a-e5c392384ca6}*SharedItemsImports = 4
-		WpfHexEditor.Sample.MVVM.Contracts\WpfHexEditor.Sample.MVVM.Contracts.projitems*{9cbd8cbb-fa34-45d9-88d8-c6d388f65a9e}*SharedItemsImports = 4
-		WpfHexEditor.Sample.MVVM.Contracts\WpfHexEditor.Sample.MVVM.Contracts.projitems*{dad85044-539a-427a-8624-c5c54830726c}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8402A047-02A8-4143-898A-E5C392384CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8402A047-02A8-4143-898A-E5C392384CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8402A047-02A8-4143-898A-E5C392384CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8402A047-02A8-4143-898A-E5C392384CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{004B0EDC-CEFD-4745-B51C-E99B53A41165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{004B0EDC-CEFD-4745-B51C-E99B53A41165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{004B0EDC-CEFD-4745-B51C-E99B53A41165}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,17 +35,19 @@ Global
 		{5286F564-DDB2-4AFD-865C-35E4C8905958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5286F564-DDB2-4AFD-865C-35E4C8905958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5286F564-DDB2-4AFD-865C-35E4C8905958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9CBD8CBB-FA34-45D9-88D8-C6D388F65A9E} = {DE643380-39D7-46A7-8C4C-97626D7BF7DF}
-		{8402A047-02A8-4143-898A-E5C392384CA6} = {DE643380-39D7-46A7-8C4C-97626D7BF7DF}
 		{004B0EDC-CEFD-4745-B51C-E99B53A41165} = {9D7389B3-BCF2-4F37-B3D9-256981687120}
 		{DE643380-39D7-46A7-8C4C-97626D7BF7DF} = {E7C58EBD-5476-4A12-83EB-235DE68AF079}
-		{DAD85044-539A-427A-8624-C5C54830726C} = {DE643380-39D7-46A7-8C4C-97626D7BF7DF}
 		{5286F564-DDB2-4AFD-865C-35E4C8905958} = {E7C58EBD-5476-4A12-83EB-235DE68AF079}
+		{EC4FCC7E-3097-4EDB-B9A0-F51B66BA20F5} = {DE643380-39D7-46A7-8C4C-97626D7BF7DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B382CAE-4846-466E-A3D3-0842043B4012}
