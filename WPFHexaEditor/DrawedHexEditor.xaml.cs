@@ -1545,10 +1545,10 @@ namespace WpfHexaEditor
         }
 
         private void InitializeFixedSeperatorsBindings() {
-            IEnumerable<(Rectangle seperator, Orientation orientation)> GetFixedSeperatorTuples() {
-                yield return (seperatorLineLeft, Orientation.Vertical);
-                yield return (seperatorLineTop, Orientation.Horizontal);
-                yield return (seperatorLineRight, Orientation.Vertical);
+            IEnumerable<SeperatorAndOrientationTuple> GetFixedSeperatorTuples() {
+                yield return new SeperatorAndOrientationTuple(seperatorLineLeft, Orientation.Vertical);
+                yield return new SeperatorAndOrientationTuple(seperatorLineTop, Orientation.Horizontal);
+                yield return new SeperatorAndOrientationTuple(seperatorLineRight, Orientation.Vertical);
             }
 
             SetSeperatorBindings(GetFixedSeperatorTuples());
@@ -1571,9 +1571,22 @@ namespace WpfHexaEditor
                 seperator.SetBinding(WidthProperty, SpWidthBinding);
             }
         }
-        private void SetSeperatorBindings(IEnumerable<(Rectangle seperator, Orientation orientation)> seperatorTuples) {
-            foreach (var (seperator, orientation) in seperatorTuples) {
-                SetSeperatorBinding(seperator, orientation);
+
+        struct SeperatorAndOrientationTuple
+        {
+            public SeperatorAndOrientationTuple(Rectangle seperator,Orientation orientation)
+            {
+                Seperator = seperator;
+                Orientation = orientation;
+            }
+
+            public Rectangle Seperator { get; set; }
+            public Orientation Orientation { get; set; }
+        }
+
+        private void SetSeperatorBindings(IEnumerable<SeperatorAndOrientationTuple> seperatorTuples) {
+            foreach (var tuple in seperatorTuples) {
+                SetSeperatorBinding(tuple.Seperator, tuple.Orientation);
             }
         }
     }
@@ -1784,8 +1797,8 @@ namespace WpfHexaEditor
                 return;
             }
 
-            var (success, hexByte) = ByteConverters.HexToUniqueByte(e.Text);
-            if (!success) {
+            var hexByte = ByteConverters.HexToUniqueByte(e.Text);
+            if (hexByte == null) {
                 return;
             }
 
@@ -1901,21 +1914,8 @@ namespace WpfHexaEditor
             return true;
         }
 
-        
 
-        private void AddByteCaretToUndoBuffer(params (byte originByte,byte modifiedByte,long bytePosition)[] caretParams) {
-            if(caretParams == null || caretParams.Length == 0) {
-                throw new ArgumentException($"{nameof(caretParams)} can't be null or empty.");
-            }
-
-            var count = caretParams.Length;
-            var carets = new ByteCaret[count];
-            
-            foreach (var (originByte, modifiedByte, bytePosition) in caretParams) {
-                var caret = CreateByteCaret(originByte, modifiedByte, bytePosition);
-            }
-        }
-
+ 
         private ByteCaret CreateByteCaret(byte originByte, byte modifiedByte, long bytePosition) {
             var newCaret = new ByteCaret(originByte, modifiedByte, bytePosition) {
                 ActivedPanel = ActivedPanel,

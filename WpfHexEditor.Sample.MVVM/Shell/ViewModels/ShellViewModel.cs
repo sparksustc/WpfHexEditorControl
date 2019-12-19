@@ -466,7 +466,7 @@ namespace WpfHexEditor.Sample.MVVM.ViewModels {
             //Test ObjectToolTips;
             var testObjectDataToolTip = ToolTipItemFactory.CreateToolTipObjectItem();
             testObjectDataToolTip.UIObject = new Image {
-                Source = new BitmapImage(new Uri("pack://application:,,,/WpfHexEditor.Sample.MVVM;component/Resources/Icon/17101371.jpg"))
+                Source = new BitmapImage(new Uri("pack://application:,,,/WpfHexEditor.Sample.MVVM;component/Resources/Icon/17101371.jpg", UriKind.RelativeOrAbsolute))
             };
             //testObjectDataToolTip.UIObject = new TextBlock {
             //    Text = "Test ToolTip"

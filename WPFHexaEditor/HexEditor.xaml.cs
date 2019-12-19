@@ -829,14 +829,14 @@ namespace WpfHexaEditor
         private void LinesOffSetLabel_MouseMove(object sender, MouseEventArgs e)
         {
             if (sender is FastTextLine line && e.LeftButton == MouseButtonState.Pressed)
-                SelectionStop = HexLiteralToLong(line.Text).position + BytePerLine - 1;
+                SelectionStop = HexLiteralToLong(line.Text).Value + BytePerLine - 1;
         }
 
         private void LinesOffSetLabel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (!(sender is FastTextLine line)) return;
 
-            SelectionStart = HexLiteralToLong(line.Text).position;
+            SelectionStart = HexLiteralToLong(line.Text).Value;
             SelectionStop = SelectionStart + BytePerLine - 1;
         }
 
@@ -1053,8 +1053,7 @@ namespace WpfHexaEditor
             if (e.NewValue == e.OldValue) return;
 
             ctrl.SelectionByte = ByteProvider.CheckIsOpen(ctrl._provider)
-                ? ctrl._provider.GetByte(ctrl.SelectionStart).singleByte
-                : null;
+                ? ctrl._provider.GetByte(ctrl.SelectionStart) : null;
 
             ctrl.UpdateSelection();
             ctrl.UpdateSelectionLine();
@@ -1299,11 +1298,11 @@ namespace WpfHexaEditor
             if (!ByteProvider.CheckIsOpen(_provider) || SelectionStart <= -1) return;
 
             var clipBoardText = Clipboard.GetText();
-            var (success, byteArray) = IsHexaByteStringValue(clipBoardText);
+            var byteArray = IsHexaByteStringValue(clipBoardText);
 
             #region Expend stream if needed
 
-            var pastelength = success ? byteArray.Length : clipBoardText.Length;
+            var pastelength = byteArray?.Length??clipBoardText.Length;
             var needToBeExtent = _provider.Position + pastelength > _provider.Length;
             var expend = false;
             if (expendIfneeded && AllowExtend && needToBeExtent)
@@ -1319,7 +1318,7 @@ namespace WpfHexaEditor
 
             #endregion
 
-            if (success)
+            if (byteArray != null)
                 _provider.Paste(SelectionStart, byteArray, expend);
             else
                 _provider.Paste(SelectionStart, clipBoardText, expend);
@@ -1470,13 +1469,13 @@ namespace WpfHexaEditor
         /// Set position in control at position in parameter
         /// </summary>
         public void SetPosition(string hexLiteralPosition) =>
-            SetPosition(HexLiteralToLong(hexLiteralPosition).position);
+            SetPosition(HexLiteralToLong(hexLiteralPosition).Value);
 
         /// <summary>
         /// Set position in control at position in parameter with specified selected length
         /// </summary>
         public void SetPosition(string hexLiteralPosition, long byteLength) =>
-            SetPosition(HexLiteralToLong(hexLiteralPosition).position, byteLength);
+            SetPosition(HexLiteralToLong(hexLiteralPosition).Value, byteLength);
 
         #endregion Set position methods
 
@@ -2448,7 +2447,7 @@ namespace WpfHexaEditor
                 if (LinesInfoStackPanel.Children.Count == 0) return;
 
                 var startPosition = HexLiteralToLong((LinesInfoStackPanel.Children[0] as FastTextLine).Tag.ToString())
-                    .position;
+                    .Value;
                 _provider.Position = startPosition;
                 var readSize = _provider.Read(_viewBuffer, 0, bufferlength);
                 var index = 0;
@@ -3093,7 +3092,7 @@ namespace WpfHexaEditor
                     {
                         ByteCountPanel.Visibility = Visibility.Visible;
 
-                        var val = _provider.GetByte(SelectionStart).singleByte.Value;
+                        var val = _provider.GetByte(SelectionStart).Value;
                         CountOfByteSumLabel.Content = _bytecount[val];
                         CountOfByteLabel.Content = $"0x{LongToHex(val)}";
                     }

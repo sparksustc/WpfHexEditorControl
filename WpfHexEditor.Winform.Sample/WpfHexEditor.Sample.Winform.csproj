@@ -88,11 +88,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.NET47.csproj">
-      <Project>{cf6ac02d-02fa-4ee9-a507-bd94f489972e}</Project>
-      <Name>WpfHexaEditor.NET47</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

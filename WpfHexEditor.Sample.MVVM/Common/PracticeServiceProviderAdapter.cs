@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.ServiceLocation;
+﻿using CommonServiceLocator;
 using System;
 using System.Collections.Generic;
 using WpfHexEditor.Sample.MVVM.Contracts.App;

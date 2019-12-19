@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp3.0;net45;net47</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icon\0x-Icon.ico" />
+    <None Remove="Resources\Icon\17101371.jpg" />
+    <None Remove="Resources\Icon\Close-Icon.ico" />
+    <None Remove="Resources\Icon\Logo-Icon.ico" />
+    <None Remove="Resources\Icon\Open-File-Icon.ico" />
+    <None Remove="Resources\Icon\Save-Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Expression.Interaction" Version="3.0.40218" />
+    <PackageReference Include="Quamotion.DiscUtils.Fat" Version="0.15.4" />
+    <PackageReference Include="WinInsider.Prism.Mef.Wpf" Version="7.2.0.1375" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icon\0x-Icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\17101371.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\Close-Icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\Logo-Icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\Open-File-Icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon\Save-Icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.NET47.csproj">
-      <Project>{cf6ac02d-02fa-4ee9-a507-bd94f489972e}</Project>
-      <Name>WpfHexaEditor.NET47</Name>
+    <ProjectReference Include="..\WPFHexaEditor\WpfHexaEditor.csproj">
+      <Project>{62f0f12c-4d51-4684-9d3a-915e5e663804}</Project>
+      <Name>WpfHexaEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

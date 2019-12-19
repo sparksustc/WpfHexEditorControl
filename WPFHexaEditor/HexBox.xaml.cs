@@ -117,9 +117,9 @@ namespace WpfHexaEditor
         /// <param name="value"></param>
         private void UpdateValueFrom(string value)
         {
-            var (success, val) = ByteConverters.HexLiteralToLong(value);
+            var val = ByteConverters.HexLiteralToLong(value);
 
-            LongValue = success ? val : 0;
+            LongValue = val??0;
         }
 
         #endregion Methods

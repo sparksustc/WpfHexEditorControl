@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.ServiceLocation;
+﻿using CommonServiceLocator;
+using Prism.Ioc;
 using Prism.Mef;
 using Prism.Modularity;
 using System.ComponentModel.Composition.Hosting;
@@ -18,7 +19,7 @@ namespace WpfHexEditor.Sample.MVVM {
             
         }
 
-
+        protected override IContainerExtension CreateContainerExtension() => null;
         protected override IModuleCatalog CreateModuleCatalog() {
             return new ConfigurationModuleCatalog();
         }
