@@ -12,6 +12,7 @@ namespace WpfHexEditor.Sample.MVVM {
             };
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
 
+
             };
         }
         protected override void OnStartup(StartupEventArgs e) {
